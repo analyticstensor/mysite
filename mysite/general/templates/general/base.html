@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-hs" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" contentt="IE=edge,chrome=1">
+        <title>{{ config['SITE_NAME'] }} - {% block title %} {% endblock %}</title>
+        <meta name="description" content="Mysite Portal">
+        <meta name='keywords' content="Mysite Portal">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/css/bulma.min.css" rel="stylesheet" />
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/static/css/style.css" rel="stylesheet" />
+	    <link href="/static/css/default.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="'wrapper">
+            <header>
+                <div class="navbar navbar-default navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="{{ url_for('general.index') }}">{{ config['SITE_NAME']|upper }}</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">               
+                                {% if current_user.is_authenticated %}
+                                <li><a href="{{ url_for('general.portfolio') }}">Profile</a></li>
+                                <li><a href="{{ url_for('authenticate.logout') }}">Logout</a></li>
+                                {% endif %}
+                                {% if not current_user.is_authenticated %}
+                                <li><a href="{{ url_for('general.index') }}">Home</a></li> 
+                                <li><a href="{{ url_for('authenticate.signup') }}">Sign Up</a></li>
+                                <li><a href="{{ url_for('authenticate.login') }}">Log In</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+			    </div>
+		    </header>
+            <div>
+                <article>
+                    {% block content %}
+                    Write each page content.
+                    {% endblock %} 
+                </article>
+            </div>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="widget">
+                                <h5 class="widgetheading">Headquarter</h5>
+                                <p>
+                                {{ config['SITE_NAME'] }}
+                                    <br>Stree Name<br> City, Zip Code, State<br>
+                                    Phone Number <br>support@{{ config['SITE_NAME']|lower }}.com<br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="widget">
+                                <h5 class="widgetheading">Pages</h5>
+                                <ul class="link-list">
+                                    <li><a href="{{ url_for('general.index') }}">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="widget">
+                                <h5 class="widgetheading">Latest posts</h5>
+                                <ul class="link-list">
+                                    <li><a href="{{ url_for('general.index') }}">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>				
+                    </div>
+                </div>
+                <div id="sub-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="copyright">
+                                    <p>&copy; {{ config['CURRENT_YEAR'] }} {{ config['SITE_NAME']|lower }}. All rights reserved.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="social-network">
+                                <!-- <li><a href="" target="_blank" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+            <script src="/static/js/jquery.js"></script>
+            <script src="/static/js/bootstrap.min.js"></script>
+        </div>
+    </body>
+</html>

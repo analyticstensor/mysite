@@ -1,0 +1,9 @@
+{% extends "general/base.html" %}
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+<h2>Portfolio</h2>
+<h4>Welcome {{ full_name }},</h4>
+<p>Ip Address {{ request.remote_addr }}</p>
+<p> Last Login: {{ current_user.last_login }}</p>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "general/base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Welcome to {{ config['SITE_NAME'] }}.</h2>
+<p>Today is {{ date }}.</p>
+<p>Current IP Address: {{ request.remote_addr }}</p>
+{% endblock %}
