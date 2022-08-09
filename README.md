@@ -1,4 +1,4 @@
-# Login Framework with Flask
+# Flask Web Application with Login Framework
 
 This repo contains login framework using Python Flask with backend MySQL database.
 
