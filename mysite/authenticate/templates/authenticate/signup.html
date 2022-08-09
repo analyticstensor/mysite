@@ -1,0 +1,88 @@
+{% extends "general/base.html" %}
+{% block title %}Create Account{% endblock %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Sign Up</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="notification is-warning">
+            {{ messages[0] }} <a href ="{{ url_for('authenticate.login') }}">Click to Login.</a>
+        </div>
+        {% endif %}
+        {% endwith %}
+        <h1>{{ msg }}</h1>
+        <form method="POST" action="{{ url_for('authenticate.signup') }}">
+            <div class="field">
+                <div class="control">
+                        {{ signup_form.hidden_tag() }}
+                        {{ signup_form.first_name.label() }}
+                        {{ signup_form.first_name(placeholder='First Name') }}
+                        {% if signup_form.first_name.errors %}
+                        <ul class="notification is-danger">
+                            {% for error in signup_form.first_name.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                        {{ signup_form.last_name.label }}
+                        {{ signup_form.last_name(placeholder='Last Name') }}
+                        {% if signup_form.last_name.errors %}
+                        <ul class="notification is-danger">
+                            {% for error in signup_form.last_name.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>               
+            </div>
+                
+            <div class="field">
+                <div class="control">
+                    {{ signup_form.email.label }}
+                    {{ signup_form.email(placeholder='Email') }}
+                    {% if signup_form.email.errors %}
+                    <ul class="notification is-danger">
+                        {% for error in signup_form.email.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    {{ signup_form.password.label }}
+                    {{ signup_form.password(placeholder='Password') }}
+                    {% if signup_form.password.errors %}
+                    <ul class="notification is-danger">
+                        {% for error in signup_form.password.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    {{ signup_form.confirm_password.label }}
+                    {{ signup_form.confirm_password(placeholder='Confirm Password') }}
+                    {% if signup_form.confirm_password.errors %}
+                    <ul class="notification is-danger">
+                        {% for error in signup_form.confirm_password.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+            {{ signup_form.submit }}
+        </form>
+    </div>
+</div>
+{% endblock %}
