@@ -50,22 +50,22 @@ $ cd mysite
   Create config file in user home directory. i.e. ~/.mysite_env. Sample .mysite_env file.
   
   ```bash
-    FLASK_APP='mysite'
-    FLASK_ENV='development'
-    SECRET_KEY='my_secret_key'
-    SQLALCHEMY_DATABASE_URI='mysql+mysqldb://dbusername:dbpassword@localhost/dbname'
-    MAIL_SERVER='mailservername'
-    MAIL_PORT='465'
-    MAIL_USE_SSL='True'
-    MAIL_USERNAME='email@mysite.com'
-    MAIL_PASSWORD='password'
-    MAIL_SENDER='email@mysite.com'
- ```
+  FLASK_APP='mysite'
+  FLASK_ENV='development'
+  SECRET_KEY='my_secret_key'
+  SQLALCHEMY_DATABASE_URI='mysql+mysqldb://dbusername:dbpassword@localhost/dbname'
+  MAIL_SERVER='mailservername'
+  MAIL_PORT='465'
+  MAIL_USE_SSL='True'
+  MAIL_USERNAME='email@mysite.com'
+  MAIL_PASSWORD='password'
+  MAIL_SENDER='email@mysite.com'
+  ```
   
   Set environment variable from ~/.mysite_env file.
 
   ```bash
-    $ export $(grep -v '^#' ~/.mysite_env | xargs)
+$ export $(grep -v '^#' ~/.mysite_env | xargs)
   ```
   
 ## Initialize database
