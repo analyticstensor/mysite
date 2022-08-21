@@ -45,7 +45,7 @@ $ cd mysite
     $ conda activate $sitename
     ```
 
-## Set reqienvironment variable used in config.py
+## Set environment variable used in config.py
 
   Create config file in user home directory. i.e. ~/.mysite_env. Sample .mysite_env file.
   
