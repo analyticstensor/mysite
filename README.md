@@ -17,7 +17,7 @@ $ git clone https://github.com/analyticstensor/mysite.git
 $ cd mysite
 ```
 
-### Create and activate virtual environment
+### Create and activate virtual environment. Install required packages from requirments.txt
 
 1. Create virtual environment with `venv`
 
@@ -37,7 +37,12 @@ $ cd mysite
     $ source myenv/bin/activate
     ```
 
-2. Create virtual environment and activate with `conda`
+    * Install packages from requirements.txt
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. Create virtual environment with packages in requirements.txt and activate with `conda`
 
     ```bash
     $ sitename=mysite
