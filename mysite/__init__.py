@@ -44,7 +44,6 @@ def create_app():
         """
         click.echo("Creating tables.")
         db.create_all()
-        # todo add logging for db.create_all() while creating table.
 
     return app
 
