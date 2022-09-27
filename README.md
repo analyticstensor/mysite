@@ -63,7 +63,7 @@ _Note list of file display from current folder. LICENSE,README.md,config.py,mysi
 2. Create virtual environment with packages in requirements.txt and activate with `conda`
 
     ```bash
-    $ echo sitename=mysite   # Set environment variable for sitename.
+    $ export sitename=mysite   # Set environment variable for sitename.
     $ conda create --name $sitename --file requirements.txt
     $ conda env list # sitename should be in the list.
     $ conda activate $sitename  # Use recently create environment to create start our web application.
@@ -116,7 +116,7 @@ mysql> use mysite;
 mysql> show tables; -- List table: user
 mysql> exit;
 (mysite)$ echo $sitename # should prompt mysite. if not use command below
-(mysite)$ echo sitename=mysite   # Set environment variable for sitename.
+(mysite)$ export sitename=mysite   # Set environment variable for sitename.
 ```
 
 ## Run Application
