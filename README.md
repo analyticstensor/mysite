@@ -16,10 +16,7 @@ This repo contains login framework using Python Flask with backend MySQL databas
      1. Create database `mysite` (In mysql)
       ```bash
       mysql> create database if not exists mysite;
-      ```
-
-      ```bash
-      -> exit;
+      mysql> exit; 
       ```
 
 ## Clone Source Code
@@ -36,13 +33,7 @@ You can see list of following files:
 $ ls -1
 $ cd mysite
 ```
-LICENSE
-README.md
-__pycache__/
-config.py
-mysite/
-requirements.txt
-setup.sh*
+_Note list of file display from current folder. LICENSE,README.md,config.py,mysite/,requirements.txt,setup.sh_
 
 ### Create and activate virtual environment. Install required packages from requirments.txt
 
@@ -114,10 +105,16 @@ $ export $(grep -v '^#' ~/.mysite_env | xargs)
 $ cd mysite
 $ flask init-db
 ```
-The above command will prompt. `Creating tables`. 
+The above command will prompt. `Creating tables. It has created i.e. user`. 
 You can check the information below:
- * Login to database. `mysite` database will be created.
- 
+ * Login to database. (i.e. echo $SQLALCHEMY_DATABASE_URI )`mysite` database will be created. 
+
+## Validation
+
+```bash
+mysql> use mysite_v1;
+mysql> show tables; -- List table: user
+```
 
 ## Run Application
 
