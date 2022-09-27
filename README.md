@@ -129,8 +129,9 @@ $ flask run
 
 `http://127.0.0.1:5000/`
 
-## Enjoy your application with your application.
+#### Enjoy your application with simple login framework using Python Flask. Share the site. Email us at info@analyticstensor.com for any questions/comments/supports.
 
-## Next todo list:
+#### Next to-do list:
  * Add logging
  * Add cookies
+ * Add CI/CD pipeline for this site.
