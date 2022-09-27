@@ -112,7 +112,7 @@ You can check the information below:
 ## Validation
 
 ```bash
-mysql> use mysite_v1;
+mysql> use mysite;
 mysql> show tables; -- List table: user
 ```
 
