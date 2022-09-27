@@ -114,6 +114,9 @@ You can check the information below:
 ```bash
 mysql> use mysite;
 mysql> show tables; -- List table: user
+mysql> exit;
+(mysite)$ echo $sitename # should promt mysite. if not use command below
+(mysite)$ echo sitename=mysite   # Set environment variable for sitename.
 ```
 
 ## Run Application
