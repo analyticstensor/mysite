@@ -7,6 +7,20 @@ This repo contains login framework using Python Flask with backend MySQL databas
 1. Install MySQL
 
     * Create database with specified username and database name specified in environment variable.
+    * Login to the console for the database.
+      In mysql:      
+      ```bash
+      $ mysql -u root -p # (Enter your root database password.)
+      ```
+    Follow below steps:
+     1. Create database `mysite` (In mysql)
+      ```bash
+      mysql> create database if not exists mysite;
+      ```
+
+      ```bash
+      -> exit;
+      ```
 
 ## Clone Source Code
 
@@ -16,6 +30,19 @@ Clone source code from git repo.
 $ git clone https://github.com/analyticstensor/mysite.git
 $ cd mysite
 ```
+
+You can see list of following files:
+```bash
+$ ls -1
+$ cd mysite
+```
+LICENSE
+README.md
+__pycache__/
+config.py
+mysite/
+requirements.txt
+setup.sh*
 
 ### Create and activate virtual environment. Install required packages from requirments.txt
 
@@ -45,9 +72,17 @@ $ cd mysite
 2. Create virtual environment with packages in requirements.txt and activate with `conda`
 
     ```bash
-    $ sitename=mysite
+    $ echo sitename=mysite   # Set environment variable for sitename.
     $ conda create --name $sitename --file requirements.txt
-    $ conda activate $sitename
+    $ conda env list # sitename should be in the list.
+    $ conda activate $sitename  # Use recently create environment to create start our web application.
+    ```
+   Know error for conda:
+    * Some of the package need to download from [conda-forge](https://anaconda.org/conda-forge/). Install these package manually: flask-mail==0.9.1, pyjwt==2.4.0, jwt==1.3.1. Following the command below:
+    ```bash
+    (mysite)$ conda install -c conda-forge pyjwt   # make sure terminal start with virtual environment name. i.e. mysite
+    (mysite)$ conda install -c conda-forge flask-mail
+    (mysite)$ pip install jwt
     ```
 
 ## Set environment variable used in config.py
@@ -79,6 +114,10 @@ $ export $(grep -v '^#' ~/.mysite_env | xargs)
 $ cd mysite
 $ flask init-db
 ```
+The above command will prompt. `Creating tables`. 
+You can check the information below:
+ * Login to database. `mysite` database will be created.
+ 
 
 ## Run Application
 

@@ -36,7 +36,7 @@ def create_app():
     app.register_blueprint(general_blueprint)
     app.register_blueprint(email_blueprint)
     
-    # Add init-db command.
+    # Add init-db command
     @app.cli.command('init-db')
     def initialize_db():
         """
