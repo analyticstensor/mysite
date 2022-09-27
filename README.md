@@ -128,3 +128,9 @@ $ flask run
 ## Checkout application url
 
 `http://127.0.0.1:5000/`
+
+## Enjoy your application with your application.
+
+## Next todo list:
+ * Add logging
+ * Add cookies
