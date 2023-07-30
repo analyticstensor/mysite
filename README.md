@@ -35,7 +35,7 @@ $ cd mysite
 ```
 _Note list of file display from current folder. LICENSE,README.md,config.py,mysite/,requirements.txt,setup.sh_
 
-### Create and activate virtual environment. Install required packages from requirments.txt
+### Create and activate virtual environment. Install required packages from requirements.txt
 
 1. Create virtual environment with `venv`
 
