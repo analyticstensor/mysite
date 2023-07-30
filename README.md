@@ -71,8 +71,8 @@ _Note list of file display from current folder. LICENSE,README.md,config.py,mysi
    Known issue while using conda with fixture.
     * Some of the package need to download from [conda-forge](https://anaconda.org/conda-forge/). Install these package manually: flask-mail==0.9.1, pyjwt==2.4.0, jwt==1.3.1. Following the command below:
     ```bash
-    (mysite)$ conda install -c conda-forge pyjwt   # make sure terminal start with virtual environment name. i.e. mysite
-    (mysite)$ conda install -c conda-forge flask-mail
+    (mysite)$ conda install -c conda-forge flask-mail # make sure terminal start with virtual environment name. i.e. mysite
+    (mysite)$ pip install pyjwt # conda install -c conda-forge pyjwt is not working       
     (mysite)$ pip install jwt
     ```
 
